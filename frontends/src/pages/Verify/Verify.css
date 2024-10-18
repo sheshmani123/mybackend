@@ -1,0 +1,33 @@
+.verify {
+    min-height: 60vh;
+    display: grid;
+  }
+  
+  .verify .spinner {
+    width: 100px;
+    height: 100px;
+    place-self: center;
+    border: 5px solid #bdbdbd;
+    border-top-color: aqua;
+    border-radius: 50%;
+    animation: rotate 1.5s linear infinite, glow 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ffffff, #f2f2f2);
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes glow {
+    0%,
+    100% {
+      border-color: aqua;
+    }
+    50% {
+      border-color: #00ffff; /* Adjust glow color as needed */
+    }
+  }
+  
