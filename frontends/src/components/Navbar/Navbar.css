@@ -1,117 +1,187 @@
+/* Navbar Container */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: white;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  width: 40px;
-  height: auto;
+/* Logo */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ecf0f1;
+  text-decoration: none;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
+/* Navbar Search Box */
+.navbar-search {
+  flex-grow: 1;
+  margin: 0 15px;
+  max-width: 300px; /* Set a max width for the search box */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color:rgba(255, 255, 255, 0.848);
+  color: black;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.887);
+}
+
+/* Username Display */
+.navbar-username {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Navbar Menu Items */
 .navbar-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  /* Hide the menu for smaller screens */
+  display: flex;
+  gap: 20px;
 }
 
 .navbar-menu a {
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  margin-right: 2rem;
-  color: #3c3b3b;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #16a085;
+  transition: background-color 0.3s ease;
 }
 
-.navbar-menu a.active {
-  font-weight: bold;
+/* Active Menu Item Color */
+
+.navbar-menu .active {
+  background-color: #1abc9c;
 }
 
+/* Navbar Right Section (Profile and Logout) */
 .navbar-right {
   display: flex;
   align-items: center;
-}
-
-.navbar-right img {
-  width: 24px;
-  height: auto;
-  margin-right: 1rem;
-}
-
-.navbar-search-icon,
-.navbar-search-iconWishList {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-}
-
-.wishlist-icon {
-  font-size: 24px;
-}
-
-.dot {
-  margin-left: 5px;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
+  gap: 20px;
 }
 
 .navbar-profile {
   position: relative;
-  margin-left: 1rem;
+}
+
+.navbar-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .nav-profile-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
   display: none;
-  background-color: hwb(180 83% 3%);
-  padding: 12px 25px;
-  border-radius: 4px;
-  border: 1px solid black;
-  outline: 2px solid white;
-  list-style: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: #34495e;
+  border-radius: 5px;
+  width: 180px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav-profile-dropdown.active {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.navbar-profile:hover .nav-profile-dropdown {
+  display: block;
 }
 
 .nav-profile-dropdown li {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-profile-dropdown li:hover {
+  background-color: #16a085;
 }
 
 .nav-profile-dropdown li img {
   width: 20px;
-  height: auto;
-  margin-right: 0.5rem;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.nav-profile-dropdown hr {
-  margin: 0.5rem 0;
+/* Logout Button */
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
   border: none;
-  border-top: 1px solid #cccccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.navbar-profile:hover .nav-profile-dropdown {
-  display: flex;
-  flex-direction: column;
+.logout-button:hover {
+  background-color: #c0392b;
 }
 
-@media only screen and (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-search {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 250px; /* Set a smaller max-width for mobile */
+  }
+
+  .navbar-username {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
   .navbar-menu {
-    display: none; /* Hide the menu for smaller screens */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-menu a {
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logout-button {
+    width: 100%;
+    margin-top: 10px;
   }
 }

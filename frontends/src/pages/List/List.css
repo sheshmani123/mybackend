@@ -1,0 +1,341 @@
+/* Employee List Container */
+.employee-list-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto; /* Centers the container */
+    width: 100%; /* Ensure the container takes the full screen width */
+}
+
+/* Table Styling */
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    table-layout: auto; /* Let columns adjust based on content */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures no unwanted overflow */
+}
+
+/* Styling the table header and cells */
+.employee-table th,
+.employee-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/* Styling for header */
+.employee-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Hover Effect for rows */
+.employee-table tr:hover {
+    background-color: #ecf0f1;
+}
+
+/* Image Styling */
+.employee-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    white-space: nowrap; /* Ensure buttons stay on one line */
+}
+
+.update-btn,
+.delete-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    min-width: 100px; /* Set a minimum width for consistency */
+    text-align: center;
+}
+
+.update-btn {
+    background-color: #16a085;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: hsl(168, 76%, 31%);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Create Employee Button Styling */
+.create-employee-btn {
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #16a085;
+    display: flex; justify-content: center; align-items: center;
+    margin-left: 42%;
+    color: white;
+    border: none;
+    
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-employee-btn:hover {
+    background-color: #137f69;
+}
+
+/* Create Employee Form Card Styling */
+.create-employee-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create-employee-form form {
+    display: grid;
+    gap: 15px;
+}
+
+.create-employee-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.create-employee-form input,
+.create-employee-form select {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.create-employee-form input:focus,
+.create-employee-form select:focus {
+    border-color: #4CAF50;
+}
+
+.create-employee-form button {
+    padding: 50px 20px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 100%;
+    
+    transition: background-color 0.3s ease;
+}
+
+.create-employee-form button:hover {
+    background-color: #16a085;
+}
+
+/* Buttons in One Line */
+.create-employee-form button {
+    width: 48%; /* Each button takes half width with spacing */
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Spacing Between Buttons */
+.create-employee-form .button-container {
+    display: flex;
+    justify-content: space-between; /* Equal spacing on both sides */
+    margin-top: 10px;
+}
+
+.create-employee-form button[type="submit"] {
+    background-color: #4CAF50; /* Green color for submit */
+}
+
+.create-employee-form button[type="submit"]:hover {
+    background-color: red;
+}
+
+.create-employee-form button[type="button"] {
+    background-color: #f44336; /* Red for cancel */
+}
+
+.create-employee-form button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design for Large Screens */
+@media (max-width: 1366px) { /* For 14-inch screen */
+    .employee-table th,
+    .employee-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .employee-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .create-employee-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .employee-table th,
+    .employee-table td {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .create-employee-form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .employee-table-wrapper {
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    /* Adjust button size for smaller screens */
+    .update-btn,
+    .delete-btn {
+    padding: 5px 12px;    /* Decrease padding to make the buttons smaller */
+    font-size: 9px;      /* Decrease font size */
+    width: auto;          /* Keep the width to auto so it adjusts based on the content */
+    min-width: 80px;      /* Set a minimum width to ensure the button doesn't shrink too small */
+    text-align: center;
+    }
+}
+
+/* Form Card Styling */
+.create-employee-form {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px; /* Compact width for the form */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Title */
+.create-employee-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Label Styling */
+.create-employee-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input and Select Styling */
+.create-employee-form input,
+.create-employee-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.create-employee-form input:focus,
+.create-employee-form select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Green focus glow */
+}
+
+/* File Input Styling */
+.create-employee-form input[type="file"] {
+    padding: 5px;
+    border: none;
+}
+
+/* Cancel Button */
+.create-employee-form button[type="button"] {
+    background-color: #f44336; /* Red for cancel button */
+}
+
+.create-employee-form button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Buttons Alignment */
+.create-employee-form .button-container {
+    display: flex;
+    justify-content: space-between; /* Equal spacing on both sides */
+    margin-top: 10px;
+}
+
+.create-employee-form button[type="submit"] {
+    background-color: #16a085; /* Green color for submit */
+}
+
+.create-employee-form button[type="submit"]:hover {
+    background-color: #0b8068;
+}
+
+.create-employee-form button[type="button"] {
+    background-color: #f44336; /* Red for cancel */
+}
+
+.create-employee-form button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create-employee-form button {
+        width: 100%; /* Full width for small screens */
+        margin-bottom: 10px;
+    }
+}

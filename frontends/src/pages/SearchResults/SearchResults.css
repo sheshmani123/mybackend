@@ -1,0 +1,79 @@
+/* Add a container to take full screen height */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f9;
+  overflow: hidden;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-top: 20px;
+  table-layout: fixed; /* Makes table columns adjust based on content */
+}
+
+/* Table Header Styling */
+thead {
+  background-color:  #2c3e50; /* Green background */
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Make table text more readable */
+th {
+  font-weight: bold;
+}
+
+td {
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+/* Style for Image Column */
+td img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+}
+
+/* Responsive design: Ensures table is scrollable on smaller screens */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+  th, td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Styling for the "No Results" message */
+.no-results {
+  font-size: 18px;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Heading Style */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
